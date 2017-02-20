@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.killSelf).setOnClickListener(this);
         mPathText = (TextView) findViewById(R.id.tinkerPath);
         mPatchText = (TextView) findViewById(R.id.patchText);
-        // 这里的差异用来当作补丁
+        /**
+         * 第一次运行安装之后，在将这里注释部分取消，调用tinkerPatchDebug命令生成补丁文件。
+         * 将补丁文件patch_signed_7zip.apk复制到手机指定地址加载补丁可看到实际效果。
+         */
 //        mPathText.setText(Html.fromHtml(getTitleStr()));
 //        mPatchText.setText("Tinker");
     }

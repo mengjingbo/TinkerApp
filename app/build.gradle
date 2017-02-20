@@ -21,11 +21,15 @@ android {
     }
 
     signingConfigs {
-        config {
-            keyAlias 'new'
-            keyPassword 'tlwlnew'
-            storeFile file('D:/keystore/new.jks')
-            storePassword 'tlwlnew'
+        try {
+            config {
+                keyAlias 'testres'
+                keyPassword 'testres'
+                storeFile file('./keystore/release.keystore')
+                storePassword 'testres'
+            }
+        } catch (ex) {
+            throw new InvalidUserDataException(ex.toString())
         }
     }
 
@@ -88,11 +92,11 @@ def bakPath = file("${buildDir}/bakApk/")
 ext {
     tinkerEnabled = true
     // 基础版本apk
-    tinkerOldApkPath = "${bakPath}/app-debug-20170217-18-58-10.apk"
+    tinkerOldApkPath = "${bakPath}/app-debug-20170217-18-51-30.apk"
     //proguard mapping file to build patch apk
     tinkerApplyMappingPath = "${bakPath}/"
     // 与基础版本一起生成的R.text文件
-    tinkerApplyResourcePath = "${bakPath}/app-debug-20170217-18-58-10-R.txt"
+    tinkerApplyResourcePath = "${bakPath}/app-debug-20170217-18-51-30-R.txt"
     //only use for build all flavor, if not, just ignore this field
     tinkerBuildFlavorDirectory = "${bakPath}/"
 
