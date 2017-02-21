@@ -10,12 +10,12 @@
 3.非gradle编译用户的命令行版本：tinker-patch-cil.jar。
 
 ##### Tinker的已知问题:
->1.Tinker不支持修改AndroidMainfest.xml，Tinker不支持新增四大组件。
-2.由于Google Pay的开发者条款限制，不建议在GP渠道动态更新代码。
-3.在Android N上，补丁对应用启动时有轻微的影响。
-4.不支持部分三星android-21机型，加载补丁时会主动抛出“TinkerRuntimeException:checkDexInstall failed”异常。
-5.由于各个厂商加固实现并不一致，在1.7.6以后的版本，Tinker不在支持加固的动态更新。
-6.对于资源替换，不支持修改remoteView，例如transition动画，notification icon以及桌面图标。
+>1.Tinker不支持修改AndroidMainfest.xml，Tinker不支持新增四大组件。  
+2.由于Google Pay的开发者条款限制，不建议在GP渠道动态更新代码。  
+3.在Android N上，补丁对应用启动时有轻微的影响。  
+4.不支持部分三星android-21机型，加载补丁时会主动抛出“TinkerRuntimeException:checkDexInstall failed”异常。  
+5.由于各个厂商加固实现并不一致，在1.7.6以后的版本，Tinker不在支持加固的动态更新。  
+6.对于资源替换，不支持修改remoteView，例如transition动画，notification icon以及桌面图标。  
 
 Tinker的修复方案跟Hotfix的修复方案大同小异，都是在两个apk包上作比较然后生成patch。下面对Tinker进行接入。
 ##### 在工程目录下的build.gradle中添加依赖库
@@ -478,9 +478,9 @@ if (buildWithTinker()) {
 }
 ```
 gradle配置就到此结束了，要注意的地方有以下几点：
->1.ext相关配置，示例中有完整描述。
-2.Tinker插件``` apply plugin: 'com.tencent.tinker.patch'```
-3.全局信息相关配置tinkerPatch 
+>1.ext相关配置，示例中有完整描述。  
+2.Tinker插件``` apply plugin: 'com.tencent.tinker.patch'```  
+3.全局信息相关配置tinkerPatch   
 
 配置完这些东西以后就可以调用tinkerPatch命令生成patch补丁文件。tinkerPatch有Debug和Release两种模式，因为是案例，所以就使用tinkerPatchDebug命令。
 ![tinkerPatch命令](http://upload-images.jianshu.io/upload_images/1503443-e811b53371c06da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
