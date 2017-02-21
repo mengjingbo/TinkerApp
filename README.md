@@ -89,8 +89,8 @@ Tinker需要在AndroidManifest.xml中指定TINKER_ID
 ```
 ##### Patch生成
 patch生成官方提供了两种接入方式：
->1.基于命令行的方式。
-2.gradle编译的方式。
+>1.gradle编译的方式。   
+2.基于命令行的方式。     
 
 **1.gradle编译生成patch**
 微信Tinker的gradle配置也很简单，先来浏览一下[Tinker接入指南，点击进入查看](https://github.com/Tencent/tinker/wiki/Tinker-%E6%8E%A5%E5%85%A5%E6%8C%87%E5%8D%97)，对使用gradle配置的参数了解一下，接下来附上一个相对比较完整的gradle配置。
